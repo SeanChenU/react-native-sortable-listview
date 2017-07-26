@@ -261,7 +261,8 @@ class SortableListView extends React.Component {
   }
 
   handleListLayout = e => {
-    this.listLayout = e.nativeEvent.layout
+    this.listLayout = e.nativeEvent.layout;
+    this.props.handleListLayout && this.props.handleListLayout(e);
   }
 
   handleScroll = e => {
@@ -270,7 +271,8 @@ class SortableListView extends React.Component {
   }
 
   handleContentSizeChange = (width, height) => {
-    this.scrollContainerHeight = height
+    this.scrollContainerHeight = height;
+    this.props.handleContentSizeChange && this.props.handleContentSizeChange(width, height);
   }
 
   scrollAnimation = () => {
